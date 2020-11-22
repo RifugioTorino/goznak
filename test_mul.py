@@ -9,6 +9,8 @@ def multiplicate(a):
              кроме числа, стоящего на i-ом месте.
     """
     assert len(a) > 0
+    assert all(map(lambda x: isinstance(x, int), a))
+    assert all(map(lambda x: x != 0, a))
 
     b = reduce(lambda x, y: x*y, a)
     return [b//x for x in a]
@@ -19,8 +21,21 @@ class TestM(unittest.TestCase):
     def test_empty(self):
         self.assertRaises(AssertionError, multiplicate, [])
 
+    def test_int(self):
+        inputs = [[1, 2, '3', 4], [0 + 1j], [5, 5.5, -5, 5]]
+        for a in inputs:
+            self.assertRaises(AssertionError, multiplicate, a)
+
     def test_value(self):
-        self.assertEqual(multiplicate([1, 2, 3, 4]), [24, 12, 8, 6])
+        inputs = [[1, 2, 3, 4], [5], [5, 5, -5, 5]]
+        results = [[24, 12, 8, 6], [1], [-125, -125, 125, -125]]
+        for a, b in zip(inputs, results):
+            self.assertEqual(multiplicate(a), b)
+
+    def test_zero(self):
+        inputs = [[1, 2, 0, 4], [0], [5, 5, -0, 5]]
+        for a in inputs:
+            self.assertRaises(AssertionError, multiplicate, a)
 
 
 if __name__ == '__main__':
