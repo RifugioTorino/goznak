@@ -8,9 +8,9 @@ def multiplicate(a):
     :return: Массив такой же длины, в котором на i-ом месте находится произведение всех чисел массива А,
              кроме числа, стоящего на i-ом месте.
     """
-    assert len(a) > 0
-    assert all(map(lambda x: isinstance(x, int), a))
-    assert all(map(lambda x: x != 0, a))
+    assert len(a) > 0  # ensure non-emptiness
+    assert all(map(lambda x: isinstance(x, int), a))  # ensure integer
+    assert all(map(lambda x: x != 0, a))  # ensure non-zero values
 
     b = reduce(lambda x, y: x*y, a)
     return [b//x for x in a]
