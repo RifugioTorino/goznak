@@ -75,6 +75,6 @@ def script_for_learning(path = 'E:\\data\\test\\goznak',
 
 if __name__ == '__main__':
     try:
-        script_for_learning(save_model_to_file='noise_classify.pkl', epochs=1, limit=None)
+        script_for_learning(save_model_to_file='noise_classify_2.pkl', epochs=20, limit=None)
     except Exception as e:
         print(e)
