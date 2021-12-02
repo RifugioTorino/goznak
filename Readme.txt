@@ -1,7 +1,7 @@
 Обучение модели:
 Для обучения используется скрипт script_for_learning из mel_learning.py.
 
-script_for_learning(path = 'E:\\data\\test\\goznak',
+script_for_learning(path = 'E:\\data\\test\\noise',
                         save_model_to_file='noise_classify.pkl',
                         epochs=30,
                         limit=None)
