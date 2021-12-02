@@ -8,7 +8,7 @@ Denoising.
 Обучение модели:
 Для обучения используется скрипт script_for_learning из den_learning.py.
 
-script_for_learning(path = 'E:\\data\\test\\goznak',
+script_for_learning(path = 'E:\\data\\test\\noise',
                         save_weights_to_file='den_full.h5',
                         epochs=30,
                         limit=None)
